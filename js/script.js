@@ -80,7 +80,7 @@ if (passwordForm) {
             error.textContent = "";
 
             window.location.href =
-                "https://github.com/finleyredmar/Tachyon_Society_Ressources";
+                "https://drive.google.com/drive/folders/1Hk6mZLTTZZ8hnmOs4vxFrGgznnSVe56G?usp=sharing";
 
         }
 
