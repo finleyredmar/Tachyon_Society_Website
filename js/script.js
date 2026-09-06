@@ -101,7 +101,7 @@ if (passwordForm) {
 ========================================================= */
 
 const animatedElements = document.querySelectorAll(
-    ".about, .next-card, .info-card, .timeline-item, .phase-card"
+    ".about, .next-card, .info-card, .phase-card"
 );
 
 
@@ -148,43 +148,6 @@ if ("IntersectionObserver" in window) {
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
-
-    const timelineEntries = document.querySelectorAll(".timeline-entry");
-
-    if ("IntersectionObserver" in window && timelineEntries.length) {
-
-        const observer = new IntersectionObserver(function (entries) {
-
-            entries.forEach(function (entry) {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.classList.add("visible");
-
-                }
-
-            });
-
-        }, {
-            threshold: 0.15
-        });
-
-        timelineEntries.forEach(function (entry) {
-
-            observer.observe(entry);
-
-        });
-
-    }
-    else {
-
-        timelineEntries.forEach(function (entry) {
-
-            entry.classList.add("visible");
-
-        });
-
-    }
 
     const menuButton =
         document.querySelector(".mobile-menu-button");

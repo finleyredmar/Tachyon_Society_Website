@@ -3024,10 +3024,11 @@ footer {
 
 .team-story-visual.nova-collage {
 
+    grid-template-columns: 1fr 1fr;
+
     grid-template-areas:
-        "main wide wide"
-        "main short tall"
-        "side short tall";
+        "main wide"
+        "short tall";
 
 }
 
@@ -3035,7 +3036,7 @@ footer {
 .team-story-visual.nova-collage img:nth-child(2) { grid-area: wide; }
 .team-story-visual.nova-collage img:nth-child(3) { grid-area: short; }
 .team-story-visual.nova-collage img:nth-child(4) { grid-area: tall; }
-.team-story-visual.nova-collage img:nth-child(5) { grid-area: side; }
+.team-story-visual.nova-collage img:nth-child(5),
 .team-story-visual.nova-collage img:nth-child(6),
 .team-story-visual.nova-collage img:nth-child(7),
 .team-story-visual.nova-collage img:nth-child(8) {
@@ -4971,50 +4972,6 @@ p {
 
 }
 
-.timeline-rail {
-
-    position: relative;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    height: 100%;
-
-}
-
-.timeline-rail::before {
-
-    content: "";
-
-    width: 2px;
-
-    height: 100%;
-
-    background: linear-gradient(180deg, rgba(255,116,23,.4), rgba(6,59,120,.15));
-
-}
-
-.timeline-dot {
-
-    position: absolute;
-
-    width: 18px;
-
-    height: 18px;
-
-    border-radius: 50%;
-
-    background: var(--orange);
-
-    border: 5px solid #fff;
-
-    box-shadow: 0 0 0 3px rgba(255,116,23,.12);
-
-}
-
 /* =========================================================
    NEW PAGE RESPONSIVE DESIGN
 ========================================================= */
@@ -5078,58 +5035,6 @@ p {
 
     }
 
-    .timeline-shell {
-
-        padding: 30px 18px;
-
-    }
-
-    .timeline-stream::before {
-
-        left: 26px;
-
-    }
-
-    .timeline-entry {
-
-        grid-template-columns: 26px 1fr;
-
-        gap: 18px;
-
-    }
-
-    .timeline-entry > * {
-
-        grid-column: auto;
-
-    }
-
-    .timeline-entry.left .timeline-card,
-    .timeline-entry.right .timeline-card {
-
-        grid-column: 2;
-
-    }
-
-    .timeline-entry.left .timeline-photo,
-    .timeline-entry.right .timeline-photo {
-
-        grid-column: 2;
-
-    }
-
-    .timeline-rail {
-
-        justify-content: center;
-
-    }
-
-    .timeline-date {
-
-        padding-top: 0;
-
-    }
-
 }
 
 
@@ -5148,34 +5053,6 @@ p {
     .support-hero-content h1 {
 
         font-size: 45px;
-
-    }
-
-    .timeline-panel,
-    .timeline-form-panel {
-
-        padding: 20px 16px;
-
-    }
-
-    .timeline-header h2,
-    .timeline-form-panel h2 {
-
-        font-size: 30px;
-
-    }
-
-    .timeline-content {
-
-        padding: 18px 16px;
-
-    }
-
-    .timeline-meta {
-
-        flex-direction: column;
-
-        align-items: flex-start;
 
     }
 
@@ -5272,6 +5149,320 @@ p {
 
         padding: 60px 25px;
 
+    }
+
+}
+
+/* =========================================================
+   PHONE LAYOUT OVERRIDES
+========================================================= */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        height: 68px;
+        padding: 0 16px;
+    }
+
+    .logo img {
+        width: 82px;
+    }
+
+    .nav-links {
+        top: 68px;
+        padding: 12px 16px 16px;
+    }
+
+    .nav-links a {
+        font-size: 17px;
+        padding: 11px 8px;
+    }
+
+    .mobile-menu-button {
+        font-size: 23px;
+        padding: 8px;
+    }
+
+    .section {
+        width: 100%;
+        padding: 56px 20px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    .hero,
+    .goals-hero,
+    .timeline-hero {
+        min-height: 620px;
+    }
+
+    .hero-content,
+    .goals-hero-content,
+    .timeline-hero-content,
+    .support-hero-content {
+        width: 100%;
+        padding: 56px 20px;
+    }
+
+    .hero h1,
+    .goals-hero-content h1,
+    .support-hero-content h1,
+    .timeline-hero-content h1 {
+        font-size: 44px;
+        line-height: .98;
+    }
+
+    .hero p,
+    .goals-hero-content p,
+    .support-hero-content p,
+    .timeline-hero-content p {
+        font-size: 15px;
+    }
+
+    .hero-buttons,
+    .cta-buttons {
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .button {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .stats-container {
+        margin: -1px 12px 42px;
+        border-radius: 8px;
+    }
+
+    .stat {
+        padding: 17px 13px;
+    }
+
+    .stat strong {
+        font-size: 30px;
+    }
+
+    .stat span {
+        font-size: 11px;
+    }
+
+    .about,
+    .global-section,
+    .individual-giving,
+    .awards-layout {
+        gap: 28px;
+    }
+
+    .global-content {
+        padding: 60px 20px 25px;
+    }
+
+    .global-images {
+        padding: 10px 20px 50px;
+    }
+
+    .global-images img {
+        height: 190px;
+    }
+
+    .competition-hero-inner,
+    .countries-inner {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .competition-images img {
+        height: 240px;
+    }
+
+    .team-showcase-grid,
+    .pillar-grid,
+    .volunteer-grid,
+    .volunteer-grid-5,
+    .sponsor-grid,
+    .next-grid,
+    .phase-grid,
+    .country-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-card-header {
+        align-items: flex-start;
+    }
+
+    .team-badge {
+        max-width: 58%;
+        line-height: 1.2;
+    }
+
+    .team-gallery img {
+        height: 125px;
+    }
+
+    .team-story {
+        padding-top: 8px;
+    }
+
+    .team-story .section {
+        width: calc(100% - 24px);
+        padding: 30px 14px;
+        border-radius: 22px;
+    }
+
+    .team-story-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+        margin-left: 6px;
+    }
+
+    .team-story-header h2 {
+        font-size: 42px;
+    }
+
+    .team-story-visual,
+    .team-story-visual.zephyr-collage,
+    .team-story-visual.wild-collage,
+    .team-story-visual.nova-collage {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: none;
+        min-height: 0;
+        padding: 8px;
+        border-radius: 20px;
+    }
+
+    .team-story-visual img,
+    .team-story-visual img:first-child {
+        grid-row: auto;
+        min-height: 150px;
+        height: 150px;
+        border-radius: 12px;
+    }
+
+    .team-story-visual img:first-child {
+        grid-column: 1 / -1;
+        height: 210px;
+    }
+
+    .team-story-content {
+        padding: 24px 18px;
+        border-radius: 20px;
+    }
+
+    .team-story-content h3 {
+        font-size: 34px;
+    }
+
+    .team-story-badge {
+        font-size: 10px;
+        line-height: 1.35;
+    }
+
+    .achievement-list li {
+        gap: 8px;
+        padding: 12px 10px;
+        font-size: 14px;
+    }
+
+    .team-story-metrics {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 7px;
+    }
+
+    .team-story-metrics div {
+        padding: 12px 8px;
+    }
+
+    .team-story-metrics span {
+        font-size: 9px;
+        letter-spacing: .7px;
+    }
+
+    .team-story-metrics strong {
+        font-size: 24px;
+    }
+
+    .budget-card,
+    .individual-giving {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .budget-item {
+        padding: 24px 20px 18px;
+    }
+
+    .sponsor-card {
+        padding: 25px 18px;
+    }
+
+    .contact-sponsor-inner {
+        padding: 52px 20px;
+    }
+
+    .sponsor-form {
+        padding: 20px 16px;
+    }
+
+    .crowdfunding-button {
+        width: 100%;
+        font-size: 23px;
+        padding: 16px 20px;
+    }
+
+    .timeline-page {
+        padding: 45px 20px 65px;
+    }
+
+    .timeline-shell {
+        padding-top: 10px;
+    }
+
+    .timeline-stream::before {
+        left: 11px;
+    }
+
+    .timeline-entry,
+    .timeline-entry.left,
+    .timeline-entry.right {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-left: 24px;
+    }
+
+    .timeline-entry .entry-collage,
+    .timeline-entry .side-stack,
+    .timeline-entry .timeline-rail {
+        width: 100%;
+    }
+
+    .timeline-entry .timeline-rail {
+        order: -1;
+    }
+
+    .collage-grid img {
+        height: 110px;
+    }
+
+    .footer-main {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .footer-bottom {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
 }
