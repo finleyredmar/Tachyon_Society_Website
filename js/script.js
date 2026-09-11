@@ -187,41 +187,40 @@ document.addEventListener("DOMContentLoaded", function () {
        SPONSOR FORM
     ====================================================== */
 
-    const sponsorForm =
-        document.getElementById("sponsorForm");
+    const sponsorInquiry =
+        document.getElementById("sponsor-inquiry");
 
-    const formMessage =
-        document.getElementById("formMessage");
+    const sponsorshipLevel =
+        document.getElementById("sponsorshipLevel");
 
+    document.querySelectorAll(".sponsor-select").forEach(function (button) {
 
-    if (sponsorForm) {
+        button.addEventListener("click", function () {
 
-        sponsorForm.addEventListener(
-            "submit",
-            function (event) {
+            const tier = button.dataset.sponsorshipTier;
 
-                /*
-                 * Prevents the browser from refreshing the page.
-                 * This is currently a front-end form only.
-                 */
-
-                event.preventDefault();
-
-
-                if (formMessage) {
-
-                    formMessage.textContent =
-                        "Thank you! Your inquiry has been prepared. We'll get back to you soon.";
-
-                    formMessage.style.display =
-                        "block";
-
-                }
-
+            if (!sponsorInquiry || !sponsorshipLevel || !tier) {
+                return;
             }
-        );
 
-    }
+            sponsorshipLevel.value = tier;
+            sponsorInquiry.hidden = false;
+
+            sponsorInquiry.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+            const nameInput =
+                document.getElementById("sponsorName");
+
+            if (nameInput) {
+                nameInput.focus({ preventScroll: true });
+            }
+
+        });
+
+    });
 
 
     /* =====================================================

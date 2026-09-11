@@ -101,6 +101,12 @@
 
     <section class="support-hero">
 
+        <div class="support-hero-visual" aria-hidden="true">
+            <img src="images/t.jpg" alt="">
+        </div>
+
+        <div class="support-hero-overlay"></div>
+
         <div class="support-hero-content">
 
             <div class="section-label">
@@ -276,36 +282,47 @@
                     <ul>
 
                         <li>
-                            Name atop of all TRS documents
+                            Your name will appear at the top of all our
+                            documents, alongside our association name
+                            (Tachyon Racing Society - [Company Name]).
                         </li>
 
                         <li>
-                            Photos & videos from the competition
-                            season
+                            You will receive photos and videos from the
+                            competition season
                         </li>
 
                         <li>
-                            Logo on displays, polo shirts,
-                            and team cars
+                            Your logo will be featured on our displays and
+                            on our polo shirt, as well as those of our teams
+                            and their cars
                         </li>
 
                         <li>
-                            Announcement post across all networks
+                            You'll receive a post on all our networks,
+                            announcing the sponsorship
                         </li>
 
                         <li>
-                            Monthly progress updates
+                            You'll receive monthly updates on the progress
+                            of our project
                         </li>
 
                         <li>
-                            Thank-you letter + signed photo
+                            You'll also receive a thank-you letter and a
+                            signed photo
                         </li>
 
                         <li>
-                            End-of-season results video
+                            The team will send a video highlighting the
+                            results achieved thanks to the sponsor's support.
                         </li>
 
                     </ul>
+
+                    <button class="sponsor-select" type="button" data-sponsorship-tier="Platinum">
+                        Choose Platinum
+                    </button>
 
                 </article>
 
@@ -325,28 +342,36 @@
                     <ul>
 
                         <li>
-                            Photos & videos following the
-                            global competition
+                            You will receive photos and videos following
+                            the global competition
                         </li>
 
                         <li>
-                            Logo on displays, polo shirts,
-                            and team cars
+                            Your logo will be featured on our displays and
+                            on our polo shirt, as well as those of our teams
+                            and their cars
                         </li>
 
                         <li>
-                            Announcement post across all networks
+                            You'll receive a post on all our networks,
+                            announcing the sponsorship
                         </li>
 
                         <li>
-                            Monthly progress updates
+                            You'll receive monthly updates on the progress
+                            of our project
                         </li>
 
                         <li>
-                            End-of-season results video
+                            The team will send a video highlighting the
+                            results achieved thanks to the sponsor's support.
                         </li>
 
                     </ul>
+
+                    <button class="sponsor-select" type="button" data-sponsorship-tier="Gold">
+                        Choose Gold
+                    </button>
 
                 </article>
 
@@ -366,23 +391,30 @@
                     <ul>
 
                         <li>
-                            Photos & videos from the
-                            global competition
+                            You will receive photos and videos following
+                            the global competition
                         </li>
 
                         <li>
-                            Logo on displays and polo shirts
+                            Your logo will be featured on our displays and
+                            on our polo shirt
                         </li>
 
                         <li>
-                            Instagram announcement post
+                            You'll receive an Instagram post announcing the
+                            sponsorship
                         </li>
 
                         <li>
-                            Monthly progress updates
+                            You'll receive monthly updates on the progress
+                            of our project
                         </li>
 
                     </ul>
+
+                    <button class="sponsor-select" type="button" data-sponsorship-tier="Silver">
+                        Choose Silver
+                    </button>
 
                 </article>
 
@@ -402,22 +434,68 @@
                     <ul>
 
                         <li>
-                            Photos & videos from the
+                            You will receive photos and videos from the
                             competition season
                         </li>
 
                         <li>
-                            Logo on displays
+                            Your logo will be featured on our displays
                         </li>
 
                         <li>
-                            Announcement post across
-                            all networks
+                            You will have a post on all our networks,
+                            announcing the sponsorship
                         </li>
 
                     </ul>
 
+                    <button class="sponsor-select" type="button" data-sponsorship-tier="Bronze">
+                        Choose Bronze
+                    </button>
+
                 </article>
+
+            </div>
+
+            <div class="sponsor-form-wrap" id="sponsor-inquiry" hidden>
+
+                <div class="section-label">SPONSORSHIP INQUIRY</div>
+
+                <h3>LET'S TALK ABOUT YOUR SUPPORT.</h3>
+
+                <form class="sponsor-form" id="sponsorForm"
+                      action="https://formsubmit.co/teamtachyonracing@gmail.com"
+                      method="POST">
+
+                    <input type="hidden" name="_subject" value="New sponsorship inquiry from the TRS website">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="sponsorship_level" id="sponsorshipLevel">
+
+                    <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="form-honey">
+
+                    <div class="form-row">
+                        <div>
+                            <label for="sponsorName">NAME</label>
+                            <input id="sponsorName" name="name" type="text" placeholder="Your name" required>
+                        </div>
+
+                        <div>
+                            <label for="sponsorEmail">EMAIL</label>
+                            <input id="sponsorEmail" name="email" type="email" placeholder="you@company.com" required>
+                        </div>
+                    </div>
+
+                    <label for="sponsorMessage">MESSAGE</label>
+                    <textarea id="sponsorMessage" name="message" placeholder="Tell us how you would like to support TRS." required></textarea>
+
+                    <button class="form-submit" type="submit">SEND INQUIRY</button>
+
+                    <p class="form-note" id="formMessage">
+                        Your message will be sent directly to the TRS team.
+                    </p>
+
+                </form>
 
             </div>
 

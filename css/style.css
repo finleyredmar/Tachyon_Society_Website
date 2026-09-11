@@ -218,7 +218,7 @@ p {
 
     color: white;
 
-    padding: 13px 20px;
+    padding: 10px 14px;
 
     border-radius: 4px;
 
@@ -430,9 +430,9 @@ p {
 
     align-items: center;
 
-    gap: 14px;
+    gap: 10px;
 
-    padding: 14px 20px;
+    padding: 10px 14px;
 
     border-radius: 4px;
 
@@ -441,6 +441,12 @@ p {
     font-weight: 800;
 
     letter-spacing: 1px;
+
+    line-height: 1.15;
+
+    max-height: 42px;
+
+    overflow: hidden;
 
     transition: .2s;
 
@@ -1023,7 +1029,7 @@ p {
 
     margin: auto;
 
-    padding: 60px 35px;
+    padding: 120px 35px 60px;
 
 }
 
@@ -1214,11 +1220,11 @@ p {
 
     display: grid;
 
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(7,1fr);
 
-    gap: 10px;
+    gap: 8px;
 
-    max-width: 900px;
+    max-width: 1200px;
 
 }
 
@@ -1231,7 +1237,7 @@ p {
 
     border-radius: 6px;
 
-    padding: 12px 15px;
+    padding: 9px 11px;
 
     font-family: "Barlow Condensed", sans-serif;
 
@@ -1240,6 +1246,12 @@ p {
     font-weight: 700;
 
     letter-spacing: 1px;
+
+    line-height: 1.15;
+
+    max-height: 40px;
+
+    overflow: hidden;
 
     display: flex;
 
@@ -2400,35 +2412,21 @@ footer {
 
 }
 
-.team-logo-wrap {
+.team-card-image {
 
-    width: 74px;
+    width: 80px;
 
-    height: 74px;
+    height: 80px;
 
-    display: flex;
+    object-fit: cover;
 
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 18px;
-
-    background: linear-gradient(135deg, #063b78 0%, #0f7ec9 100%);
-
-    border: 1px solid rgba(3, 36, 81, 0.08);
+    border-radius: 0;
 
 }
 
-.team-logo-wrap.wild {
+.team-card-image[alt="Zephyr Racing logo"] {
 
-    background: linear-gradient(135deg, #ff7417 0%, #ff9c42 100%);
-
-}
-
-.team-logo-wrap.nova {
-
-    background: linear-gradient(135deg, #032451 0%, #3c5e8d 100%);
+    object-fit: contain;
 
 }
 
@@ -2436,11 +2434,11 @@ footer {
 
     font-family: "Barlow Condensed", sans-serif;
 
-    font-size: 28px;
+    font-size: 50px;
 
     font-weight: 800;
 
-    letter-spacing: 2px;
+    letter-spacing: 6px;
 
     color: white;
 
@@ -2452,7 +2450,7 @@ footer {
 
     font-family: "Barlow Condensed", sans-serif;
 
-    font-size: 12px;
+    font-size: 26px;
 
     font-weight: 800;
 
@@ -3133,7 +3131,9 @@ footer {
 
 .achievement-list li {
 
-    display: flex;
+    display: grid;
+
+    grid-template-columns: auto 1fr;
 
     align-items: flex-start;
 
@@ -3158,6 +3158,8 @@ footer {
 
     content: "✓";
 
+    grid-row: span 2;
+
     color: var(--orange);
 
     font-weight: 900;
@@ -3169,7 +3171,34 @@ footer {
 
 .achievement-list strong {
 
+    display: block;
+
     color: var(--navy);
+
+}
+
+
+.team-story-motto {
+
+    margin-top: 22px;
+
+    padding: 16px 18px;
+
+    background: linear-gradient(135deg, rgba(6,59,120,0.03), rgba(255,116,23,0.05));
+
+    border: 1px solid var(--border);
+
+    border-radius: 14px;
+
+    color: var(--navy);
+
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: 40px;
+
+    font-weight: 700;
+
+    text-align: center;
 
 }
 
@@ -3642,22 +3671,65 @@ footer {
 
 .support-hero {
 
-    min-height: 350px;
+    min-height: 750px;
 
-    background:
-        linear-gradient(
-            110deg,
-            #032451 0%,
-            #032451 48%,
-            #30303d 48%,
-            #30303d 100%
-        );
+    display: flex;
+
+    align-items: center;
 
     color: white;
 
     position: relative;
 
     overflow: hidden;
+
+}
+
+
+.support-hero-visual {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+}
+
+
+.support-hero-visual img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    filter: saturate(1.08) contrast(1.03);
+
+}
+
+
+.support-hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3,36,81,.92) 0%,
+            rgba(6,59,120,.72) 34%,
+            rgba(6,59,120,.38) 58%,
+            rgba(6,59,120,.16) 100%
+        );
+
+    box-shadow: inset 0 0 130px rgba(2, 23, 48, 0.28);
 
 }
 
@@ -3688,6 +3760,8 @@ footer {
     position: relative;
 
     z-index: 2;
+
+    width: 100%;
 
     max-width: var(--max-width);
 
@@ -4407,7 +4481,7 @@ p {
 
 .country {
 
-    font-size: 14px;
+    font-size: 12px;
 
 }
 
@@ -5464,5 +5538,107 @@ p {
         padding-left: 20px;
         padding-right: 20px;
     }
+
+}
+
+
+.sponsor-select {
+
+    width: 100%;
+
+    min-height: 42px;
+
+    margin-top: 8px;
+
+    border: 1px solid var(--orange);
+
+    border-radius: 5px;
+
+    background: transparent;
+
+    color: var(--orange);
+
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+}
+
+
+.sponsor-card.platinum .sponsor-select {
+
+    background: var(--orange);
+
+    color: white;
+
+}
+
+
+.sponsor-select:hover,
+.sponsor-select:focus-visible {
+
+    background: var(--orange);
+
+    color: white;
+
+}
+
+
+.sponsor-select:focus-visible,
+.form-submit:focus-visible {
+
+    outline: 3px solid rgba(255, 116, 23, .4);
+
+    outline-offset: 3px;
+
+}
+
+
+.sponsor-form-wrap {
+
+    max-width: 760px;
+
+    margin: 35px auto 0;
+
+    padding: 30px;
+
+    background: var(--navy);
+
+    border-radius: 9px;
+
+    color: white;
+
+}
+
+
+.sponsor-form-wrap h3 {
+
+    margin: 8px 0 22px;
+
+    font-family: "Barlow Condensed", sans-serif;
+
+    font-size: 28px;
+
+}
+
+
+.sponsor-form-wrap[hidden] {
+
+    display: none;
+
+}
+
+
+.form-honey {
+
+    position: absolute;
+
+    left: -9999px;
 
 }
